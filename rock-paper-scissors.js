@@ -1,13 +1,27 @@
 console.log("works");
 
 // Create a function called getComputerChoice that
+function getComputerChoice() {
 
-    // randomly chooses a number value,
+    // randomly chooses a number value, and assigns it to a variable.
+    let random = Math.random();
 
     // divides the possible values into three equal ranges and
+    if (random <= 1 / 3) {
+        return "rock";
+    }
+
+    else if (random <= 2 / 3) {
+        return "paper";
+    }
+
+    else {
+        return "scissors";
+    }
 
     // returns a string value of "rock", "paper", or "scissors" depending on what
     // range the number falls in.
+}
 
 // Create a function called getHumanChoice that
 
