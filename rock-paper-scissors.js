@@ -1,33 +1,29 @@
-console.log("works");
-
 // Create a function called getComputerChoice that
+// randomly chooses a number value, and assigns it to a variable.
+// divides the possible values into three equal ranges and
+// returns a string value of "rock", "paper", or "scissors" depending on what
+// range the number falls in.
 function getComputerChoice() {
-
-    // randomly chooses a number value, and assigns it to a variable.
     let random = Math.random();
 
-    // divides the possible values into three equal ranges and
     if (random <= 1 / 3) {
         return "rock";
     }
-
     else if (random <= 2 / 3) {
         return "paper";
     }
-
     else {
         return "scissors";
     }
-
-    // returns a string value of "rock", "paper", or "scissors" depending on what
-    // range the number falls in.
 }
 
 // Create a function called getHumanChoice that
-
-    // prompts the user to input a string ("rock", "paper", or "scissors")
-
-    // and returns the string input by the user.
+// prompts the user to input a string ("rock", "paper", or "scissors")
+// and returns the string input by the user.
+function getHumanChoice() {
+    choice = prompt("What'll it be: rock, paper, or scissors?");
+    return choice;
+}
 
 // Create a function, playRound, with two parameters humanChoice and
 // computerChoice. Must be called from within the function playGame in order to
