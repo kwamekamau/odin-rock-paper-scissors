@@ -28,8 +28,8 @@ function getHumanChoice() {
 // Create a function, playRound, with two parameters humanChoice and
 // computerChoice. Must be called from within the function playGame in order to
 // access the variables humanScore and computerScore.
-let humanScore = 0;
-let computerScore = 0;
+// let humanScore = 0;
+// let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
 
     // To make humanChoice functionally case insensitive, convert to lowercase,
@@ -115,3 +115,18 @@ function playRound(humanChoice, computerChoice) {
 
         // log to console "Well, I guess you win. (This isn't over...)"
 
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+
+    if (computerScore > humanScore) {
+        console.log("Game over, puny human! I win! Mwah ha ha ha ha!");
+    }
+    else {
+        console.log("Well, I guess you win. (This isn't over...)");
+    }
+}
