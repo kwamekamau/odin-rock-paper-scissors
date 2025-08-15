@@ -115,10 +115,13 @@ function playRound(humanChoice, computerChoice) {
 
         // log to console "Well, I guess you win. (This isn't over...)"
 
-let humanScore = 0;
-let computerScore = 0;
+let humanScore;
+let computerScore;
 
 function playGame() {
+    humanScore = 0;
+    computerScore = 0;
+    
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());
     }
