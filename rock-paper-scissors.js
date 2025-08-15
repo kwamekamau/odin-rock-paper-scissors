@@ -25,79 +25,6 @@ function getHumanChoice() {
     return choice;
 }
 
-// Create a function, playRound, with two parameters humanChoice and
-// computerChoice. Must be called from within the function playGame in order to
-// access the variables humanScore and computerScore.
-// let humanScore = 0;
-// let computerScore = 0;
-function playRound(humanChoice, computerChoice) {
-
-    // To make humanChoice functionally case insensitive, convert to lowercase,
-    humanChoice = humanChoice.toLowerCase();
-
-    // then compare the two variables. If they are strictly equal,
-        // log to console "Tie! Try again."
-        // Call playRound.
-    if (humanChoice === computerChoice) {
-        console.log("Tie! Try again.");
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-
-    // Or else, if humanChoice is "rock",
-        // then if computer choice is "paper",
-            // log to console "Sorry, loser. Paper wraps rock."
-            // Increment computerScore.
-        // Or else, 
-            // log to console "Yes! Your rock smashes scissors."
-            // Increment humanScore.
-    else if (humanChoice === "rock") {
-        if (computerChoice === "paper") {
-            console.log("Sorry, loser. Paper wraps rock.");
-            computerScore++;
-        }
-        else {
-            console.log("Yes! Your rock smashes scissors.");
-            humanScore++;
-        }
-    }
-
-    // Or else, if humanChoice is "paper",
-        // then if computer choice is "rock",
-            // log to console "Yumtastic! Paper noms rock."
-            // Increment humanScore.
-        // Or else, 
-            // log to console "Wah, wah. Scissors cut paper."
-            // Increment computerScore.
-    else if (humanChoice === "paper") {
-        if (computerChoice === "rock") {
-            console.log("Yumtastic! Paper noms rock.");
-            humanScore++;
-        }
-        else {
-            console.log("Wah, wah. Scissors cut paper.");
-            computerScore++;
-        }
-    }
-
-    // Or else, if humanChoice is "scissors",
-        // then if computer choice is "paper",
-            // log to console "Sharp! Scissors cut paper."
-            // Increment humanScore.
-        // Or else, 
-            // log to console "Ouch! This rock smashed your scissors."
-            // Increment computerScore.
-    else if (humanChoice === "scissors") {
-        if (computerChoice === "paper") {
-            console.log("Sharp! Scissors cut paper.");
-            humanScore++;
-        }
-        else {
-            console.log("Ouch! This rock smashed your scissors.");
-            computerScore++;
-        }
-    }
-}
-
 // Create a function, playGame, that plays five rounds, keeps score, and
 // declares a winner.
 
@@ -115,13 +42,86 @@ function playRound(humanChoice, computerChoice) {
 
         // log to console "Well, I guess you win. (This isn't over...)"
 
-let humanScore;
-let computerScore;
+// let humanScore;
+// let computerScore;
 
 function playGame() {
-    humanScore = 0;
-    computerScore = 0;
-    
+    let humanScore = 0;
+    let computerScore = 0;
+
+    // Create a function, playRound, with two parameters humanChoice and
+    // computerChoice. Must be called from within the function playGame in order to
+    // access the variables humanScore and computerScore.
+    // let humanScore = 0;
+    // let computerScore = 0;
+    function playRound(humanChoice, computerChoice) {
+
+        // To make humanChoice functionally case insensitive, convert to lowercase,
+        humanChoice = humanChoice.toLowerCase();
+
+        // then compare the two variables. If they are strictly equal,
+            // log to console "Tie! Try again."
+            // Call playRound.
+        if (humanChoice === computerChoice) {
+            console.log("Tie! Try again.");
+            playRound(getHumanChoice(), getComputerChoice());
+        }
+
+        // Or else, if humanChoice is "rock",
+            // then if computer choice is "paper",
+                // log to console "Sorry, loser. Paper wraps rock."
+                // Increment computerScore.
+            // Or else, 
+                // log to console "Yes! Your rock smashes scissors."
+                // Increment humanScore.
+        else if (humanChoice === "rock") {
+            if (computerChoice === "paper") {
+                console.log("Sorry, loser. Paper wraps rock.");
+                computerScore++;
+            }
+            else {
+                console.log("Yes! Your rock smashes scissors.");
+                humanScore++;
+            }
+        }
+
+        // Or else, if humanChoice is "paper",
+            // then if computer choice is "rock",
+                // log to console "Yumtastic! Paper noms rock."
+                // Increment humanScore.
+            // Or else, 
+                // log to console "Wah, wah. Scissors cut paper."
+                // Increment computerScore.
+        else if (humanChoice === "paper") {
+            if (computerChoice === "rock") {
+                console.log("Yumtastic! Paper noms rock.");
+                humanScore++;
+            }
+            else {
+                console.log("Wah, wah. Scissors cut paper.");
+                computerScore++;
+            }
+        }
+
+        // Or else, if humanChoice is "scissors",
+            // then if computer choice is "paper",
+                // log to console "Sharp! Scissors cut paper."
+                // Increment humanScore.
+            // Or else, 
+                // log to console "Ouch! This rock smashed your scissors."
+                // Increment computerScore.
+        else if (humanChoice === "scissors") {
+            if (computerChoice === "paper") {
+                console.log("Sharp! Scissors cut paper.");
+                humanScore++;
+            }
+            else {
+                console.log("Ouch! This rock smashed your scissors.");
+                computerScore++;
+            }
+        }
+    }
+
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());
     }
